@@ -5,11 +5,13 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-}
-
-html{
     scroll-behavior: smooth;
 }
+
+.no-cursor{
+    cursor: not-allowed;
+}
+
 
 nav{
     height: 80px;
@@ -69,6 +71,72 @@ li{
     text-decoration: none;
 }
 
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+    display: none;
+}
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open{
+    max-height: 100vh;
+    overflow-y: hidden;
+
+}
+
+.btn__menu--close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: white;
+}
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    font-size: 48px;
+    padding: 32px 0;
+}
+
+.menu__link{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* 
+
+Landing
+
+*/
 #landing{
     background-color: rgba(115, 66, 214, 0.1);
 }
@@ -248,7 +316,8 @@ features
 }
 
 .book{
-    width: 25%;
+    max-width: 25%;
+    width: 100%;
     padding: 24px;
 }
 
@@ -265,8 +334,12 @@ features
 .book__title:hover{
     text-decoration: underline;
     cursor:default;
+    padding-bottom: 12px;
 }
 .book__ratings{
+    display: flex;
+    max-width: 20%;
+    width: 100%;
     margin-bottom: 8px;
     color: #fabf2d;
 }
@@ -275,6 +348,8 @@ features
     padding-right: 6px;
     color: #bfbfbf;
 }
+
+
 
 /*
 
@@ -363,3 +438,57 @@ footer{
     font-size: 24px;
     text-align: center;
 }
+
+
+@media (max-width: 900px){
+    .book_img{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 767px){
+    .fas{
+        font-size: 60%;
+    }
+    .book__title{
+        font-size: 80%;
+    }
+
+    .price{
+        font-size: 80%;
+    }
+}
+
+
+@media (max-width: 550px){
+    .Nav__links{
+        display: none;
+    }
+.btn__menu{
+    display: block;
+}
+
+.highlight__img{
+    width: 40px;
+    height: 40px;
+    font-size: 100%;
+}
+
+.highlight__subtitle{
+    font-size: 80%;
+}
+
+.highlight__para{
+    font-size: 70%;
+}
+}
+
+
+
+
+
+
+
+
+
